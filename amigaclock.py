@@ -27,7 +27,7 @@ class AmigaClock:
 			if event.type == pygame.QUIT: s.running = False
 			if event.type == pygame.VIDEORESIZE:
 				s.res = event.w, event.h
-				print(s.res)
+				#print(s.res)
 				s.screen = pygame.display.set_mode(s.res, pygame.RESIZABLE)
 
 	def run(s):
@@ -39,8 +39,7 @@ class AmigaClock:
 		pygame.quit()
 
 	def clocksize(s):
-		z = min(s.res[0], s.res[1])
-		return int(.95 * z/2)
+		return int(.95 * min(s.res)/2)
 
 	def diam(s, x, r1, r2, r3, dx):
 		x1, y1 = r1*s.clocksize()*sin(x*pi/180), r1*s.clocksize()*cos(x*pi/180)
