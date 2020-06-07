@@ -13,7 +13,7 @@ SRES = 640
 class Dazzler:
 	def __init__(s):
 		pygame.init()
-		s.res = SRES, SRES
+		s.res = SRES, int(0.75 * SRES)
 		s.screen = pygame.display.set_mode(s.res, pygame.RESIZABLE)
 		pygame.display.set_caption('Dazzler')
 		s.clock = pygame.time.Clock()
