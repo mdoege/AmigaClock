@@ -29,7 +29,7 @@ class Dazzler:
 			if event.type == pygame.VIDEORESIZE:
 				s.res = event.w, event.h
 				#print(s.res)
-				s.screen = pygame.display.set_mode(s.res)
+				s.screen = pygame.display.set_mode(s.res, pygame.RESIZABLE)
 			if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
 				s.paused = not s.paused
 			if event.type == pygame.KEYDOWN and event.key == pygame.K_PERIOD:
