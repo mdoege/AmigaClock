@@ -33,7 +33,7 @@ class AmigaClock:
 	def run(s):
 		s.running = True
 		while s.running:
-			s.clock.tick(1)
+			s.clock.tick(10)
 			s.events()
 			s.update()
 		pygame.quit()
