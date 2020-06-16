@@ -67,7 +67,7 @@ class Cell:
             pygame.draw.line(self.screen, COL[self.cell[xp + 1]],
                 (x, self.res[1]-1),
                 (x, self.res[1]-1), 1)
-        pygame.display.set_caption('cell (rule %u, generation %u)' % (self.rule, self.gen))
+        pygame.display.set_caption('cell (rule %u)' % self.rule)
         
         pygame.display.flip()
 
