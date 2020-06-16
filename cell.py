@@ -48,8 +48,8 @@ class Cell:
             if s & self.rule:
                 cell2[x + 1] = 1
         # make cyclic
-        cell2[0] = self.cell[-2]
-        cell2[-1] = self.cell[1]
+        cell2[0] = cell2[-2]
+        cell2[-1] = cell2[1]
         self.cell = cell2
 
     def update(self):
