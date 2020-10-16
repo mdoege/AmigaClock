@@ -9,6 +9,7 @@ import random, time
 RES = 64
 RES2 = RES/2
 SRES = 640
+tile = 1		# number of tiles (press T to change)
 
 class Dazzler:
 	def __init__(s):
@@ -24,6 +25,8 @@ class Dazzler:
 		s.step = False
 
 	def events(s):
+		global tile
+
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT: s.running = False
 			if event.type == pygame.VIDEORESIZE:
@@ -34,6 +37,10 @@ class Dazzler:
 				s.paused = not s.paused
 			if event.type == pygame.KEYDOWN and event.key == pygame.K_PERIOD:
 				s.step = True
+			if event.type == pygame.KEYDOWN and event.key == pygame.K_t:
+				tile += 1
+				if tile > 5:
+					tile = 1
 
 	def run(s):
 		s.running = True
@@ -75,8 +82,11 @@ class Dazzler:
 			y = 3*amp * (cos(phi*t*pi/180) + off)**s.pow
 			s.draw(x, y, c)
 
-		out = pygame.transform.scale(s.dazz, (s.res))
-		s.screen.blit(out, (0, 0))
+		tres = s.res[0] // tile, s.res[1] // tile
+		out = pygame.transform.scale(s.dazz, (tres))
+		for y in range(tile):
+			for x in range(tile):
+				s.screen.blit(out, (tres[0] * x, tres[1] * y))
 		
 		pygame.display.flip()
 
