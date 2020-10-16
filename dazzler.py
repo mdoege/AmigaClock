@@ -10,6 +10,13 @@ RES = 64
 RES2 = RES/2
 SRES = 640
 tile = 1		# number of tiles (press T to change)
+slow = False		# slow mode (press S to toggle)
+
+def ttime():
+	if slow:
+		return .5 * time.time()
+	else:
+		return time.time()
 
 class Dazzler:
 	def __init__(s):
@@ -25,7 +32,7 @@ class Dazzler:
 		s.step = False
 
 	def events(s):
-		global tile
+		global tile, slow
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT: s.running = False
@@ -41,11 +48,16 @@ class Dazzler:
 				tile += 1
 				if tile > 5:
 					tile = 1
+			if event.type == pygame.KEYDOWN and event.key == pygame.K_s:
+				slow = not slow
 
 	def run(s):
 		s.running = True
 		while s.running:
-			s.clock.tick(15)
+			if slow:
+				s.clock.tick(8)
+			else:
+				s.clock.tick(15)
 			s.events()
 			s.update()
 		pygame.quit()
@@ -65,12 +77,12 @@ class Dazzler:
 			c = 0, 0, 0
 		if random.random() < random.uniform(.01, .03):
 			c = 255, 255, 255
-		amp = random.gauss(0, .1) + time.time() % 29
-		phi = random.gauss(0, .1) + time.time() % 11
-		off = random.gauss(0, .3) * sin(time.time()/23)
-		if time.time() - s.last > 19:
+		amp = random.gauss(0, .1) + ttime() % 29
+		phi = random.gauss(0, .1) + ttime() % 11
+		off = random.gauss(0, .3) * sin(ttime() / 23)
+		if ttime() - s.last > 19:
 			s.pow = random.randint(1, 3)
-			s.last = time.time()
+			s.last = ttime()
 		for t in range(0, 360, random.randint(1, 3)):
 			x = amp * (sin(phi*t*pi/180) + off)**s.pow
 			y = amp * (cos(phi*t*pi/180) + off)**s.pow
@@ -83,7 +95,7 @@ class Dazzler:
 			s.draw(x, y, c)
 
 		tres = s.res[0] // tile, s.res[1] // tile
-		out = pygame.transform.scale(s.dazz, (tres))
+		out = pygame.transform.scale(s.dazz, tres)
 		for y in range(tile):
 			for x in range(tile):
 				s.screen.blit(out, (tres[0] * x, tres[1] * y))
