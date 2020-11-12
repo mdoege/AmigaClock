@@ -16,7 +16,7 @@ ORANGE = 255, 136, 0
 class AmigaClock:
 	def __init__(s):
 		pygame.init()
-		s.res = 350, 400
+		s.res = 250, 250  # default window size
 		s.screen = pygame.display.set_mode(s.res, pygame.RESIZABLE)
 		pygame.display.set_caption('AmigaClock')
 		s.screen.fill(BLUE)
