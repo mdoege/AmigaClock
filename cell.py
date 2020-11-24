@@ -10,13 +10,13 @@ def getcol():
 COL = getcol(), getcol()
 FPS = 60
 RULES = 18, 22, 26, 30, 41, 45, 54, 60, 90, 102, 105, 106, 110, 122, 126, 146, 150, 154, 182
-RES = 300, 500
+RES = 500, 300
 NCELL = RES[0]
 
 class Cell:
     def __init__(self):
         pygame.init()
-        self.res = RES
+        self.res = int(2 * RES[0]), int(2 * RES[1])
         self.screen = pygame.display.set_mode(self.res, pygame.RESIZABLE)
         pygame.display.set_caption('cell')
         self.clock = pygame.time.Clock()
