@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
-# "Munching squares"
+# Minsky circle algorithm
 
 import pygame
 import random, time
 
 RES = 128
 RES2 = RES/2
-SRES = 640
+SRES = 800
 tile = 1		# number of tiles (press T to change)
 slow = False		# slow mode (press S to toggle)
 
@@ -20,9 +20,9 @@ def ttime():
 class Dazzler:
 	def __init__(s):
 		pygame.init()
-		s.res = SRES, int(0.75 * SRES)
+		s.res = SRES, SRES
 		s.screen = pygame.display.set_mode(s.res, pygame.RESIZABLE)
-		pygame.display.set_caption('Munching squares')
+		pygame.display.set_caption('Circles')
 		s.clock = pygame.time.Clock()
 		s.dazz = pygame.Surface((RES, RES))
 		s.pow = 1
@@ -82,10 +82,13 @@ class Dazzler:
 			c = 0, 0, 0
 		if random.random() < random.uniform(.01, .03):
 			c = 255, 255, 255
-			
-		for x in range(RES):
-			y = x ^ s.t
-			s.draw2(x, y, c)
+
+		x, y = random.uniform(-1, 1), random.uniform(-1, 1)
+		e = .005
+		for t in range(random.randint(10, 3000)):
+			x = x - e * y
+			y = y + e * x
+			s.draw2(RES2 + RES2 * x, RES2 + RES2 * y, c)
 
 		tres = s.res[0] // tile, s.res[1] // tile
 		out = pygame.transform.scale(s.dazz, tres)
