@@ -11,7 +11,7 @@ An analog [Amiga](https://en.wikipedia.org/wiki/Amiga) clock and some other expe
 
 ![screenshot1](https://github.com/mdoege/AmigaClock/raw/master/amigaclock.png "AmigaClock screenshot")
 ![screenshot2](https://github.com/mdoege/AmigaClock/raw/master/screenshot.png "Cell, Dazzler, cpumon screenshot")
-![screenshot3](https://github.com/mdoege/AmigaClock/raw/master/screenshot2.png "Circles and Minsky screenshot")
+![screenshot3](https://github.com/mdoege/AmigaClock/raw/master/screenshot2.png "Circles and Munch screenshot")
 
 ### License
 
