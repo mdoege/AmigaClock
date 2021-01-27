@@ -9,8 +9,9 @@ An analog [Amiga](https://en.wikipedia.org/wiki/Amiga) clock and some other expe
 * minsky: [Minsky circles](https://www.hakmem.org/#item149)
 * munch: colorful [munching squares](https://www.hakmem.org/#item146)
 
-![screenshot](https://github.com/mdoege/AmigaClock/raw/master/amigaclock.png "AmigaClock screenshot")
-![screenshot](https://github.com/mdoege/AmigaClock/raw/master/screenshot.png "Cell, Dazzler, cpumon screenshot")
+![screenshot1](https://github.com/mdoege/AmigaClock/raw/master/amigaclock.png "AmigaClock screenshot")
+![screenshot2](https://github.com/mdoege/AmigaClock/raw/master/screenshot.png "Cell, Dazzler, cpumon screenshot")
+![screenshot3](https://github.com/mdoege/AmigaClock/raw/master/screenshot2.png "Circles and Minsky screenshot")
 
 ### License
 
