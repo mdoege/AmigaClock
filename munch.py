@@ -23,7 +23,7 @@ class Dazzler:
 		pygame.init()
 		s.res = SRES, int(0.75 * SRES)
 		s.screen = pygame.display.set_mode(s.res, pygame.RESIZABLE)
-		pygame.display.set_caption('Dazzler')
+		pygame.display.set_caption('Munching squares')
 		s.clock = pygame.time.Clock()
 		s.dazz = pygame.Surface((RES, RES))
 		s.pow = 1
