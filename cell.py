@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 # Cellular automaton
+#   (press Space to pick a new rule, color scheme, and initial conditions)
 
 import pygame, random
 
@@ -11,7 +12,8 @@ COL = getcol(), getcol()
 FPS = 60
 RULES = 18, 22, 26, 30, 41, 45, 54, 60, 90, 102, 105, 106, 110, 122, 126, 146, 150, 154, 182
 RES = 500, 300
-NCELL = RES[0]
+PIXSIZE = 2
+NCELL = RES[0] // PIXSIZE
 
 class Cell:
     def __init__(self):
@@ -20,7 +22,18 @@ class Cell:
         self.screen = pygame.display.set_mode(self.res, pygame.RESIZABLE)
         pygame.display.set_caption('cell')
         self.clock = pygame.time.Clock()
-        self.cell = [random.randint(0, 1) for q in range(2 + NCELL)]
+        self.newrule()
+
+    def newrule(self):
+        global COL
+
+        COL = getcol(), getcol()
+        if random.random() < .5:
+            self.cell = [random.randint(0, 1) for q in range(2 + NCELL)]
+        else:
+            self.cell = [0 for q in range(2 + NCELL)]
+            for n in range(random.randint(1, 10)):
+                self.cell[random.randint(10, NCELL-10)] = 1
         self.rule = random.choice(RULES)
         self.gen = 1
         self.line = 0
@@ -31,6 +44,8 @@ class Cell:
             if event.type == pygame.VIDEORESIZE:
                 self.res = event.w, event.h
                 self.screen = pygame.display.set_mode(self.res, pygame.RESIZABLE)
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                self.newrule()
 
     def run(self):
         self.running = True
@@ -60,7 +75,7 @@ class Cell:
             (0, self.res[1]-1),
             (self.res[0]-1, self.res[1]-1), 1)
         scrollfac = max(1, int(self.res[0] / RES[0]))
-        if self.line % scrollfac == 0:
+        if (self.line / PIXSIZE) % scrollfac == 0:
             self.newgen()
         for x in range(self.res[0]):
             xp = int(x / self.res[0] * NCELL)
