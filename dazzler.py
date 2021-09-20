@@ -72,7 +72,8 @@ class Dazzler:
 		if s.paused and not s.step:
 			return
 		s.step = False
-		c = 85*random.randint(0, 3), 85*random.randint(0, 3), 85*random.randint(0, 3)
+		# use VGA "web-safe" 216 color palette (six levels per channel)
+		c = 51*random.randint(0, 5), 51*random.randint(0, 5), 51*random.randint(0, 5)
 		if random.random() < random.uniform(.2, 1):
 			c = 0, 0, 0
 		if random.random() < random.uniform(.01, .03):
