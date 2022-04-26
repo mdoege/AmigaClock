@@ -17,7 +17,7 @@ def now():
     # the beats.
     seconds = (3600+(now.hour * 3600) +
               (now.minute*60) +
-              (now.second)) % 86400
+              (now.second) + 1e-6 * now.microsecond) % 86400
 
     # Round off to 3 decimal places
     return round(seconds / 86.4, 3)
