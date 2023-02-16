@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # AmigaOS 1.3 clock in PyGame
 
@@ -6,12 +6,14 @@
 
 import pygame
 from math import pi, cos, sin
-import datetime
+import datetime, os
 
 BLUE = 0, 85, 170
 BLACK = 0, 0, 0
 WHITE = 255, 255, 255
 ORANGE = 255, 136, 0
+
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 
 class AmigaClock:
 	def __init__(s):
@@ -19,6 +21,7 @@ class AmigaClock:
 		s.res = 250, 250  # default window size
 		s.screen = pygame.display.set_mode(s.res, pygame.RESIZABLE)
 		pygame.display.set_caption('AmigaClock')
+		pygame.display.set_icon(pygame.image.load('amigaclock_icon.png'))
 		s.screen.fill(BLUE)
 		s.clock = pygame.time.Clock()
 
