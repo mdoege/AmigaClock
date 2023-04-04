@@ -6,6 +6,7 @@ An analog [Amiga](https://en.wikipedia.org/wiki/Amiga) clock and several other g
 
 * aclock/aclock2/amigaclock: Amiga-inspired analog clocks in different designs
 * oclock: "on-line clock" with modem dialing sound, meant to track daily time spent online. Use "o" to toggle online status, "r" for daily reset.
+* pomo: activity timer (20 minutes green, 5 minutes red; reset with "r" key)
 * smoothclock: like amigaclock but with smooth second hand movement
 * swatch: Swatch Internet Time (aka "Beats") clock
 * syncclock: same as tclock, except it uses ntpdate to synchronize computer time to a time server every 30 minutes
