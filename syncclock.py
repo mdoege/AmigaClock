@@ -49,7 +49,7 @@ class sc:
         t2 = open("/tmp/ntpsync.txt").readline()
         tt = t2.split()
         if len(tt) == 11:
-            t2 = f"   {tt[0]} {tt[1]} {tt[2]} {tt[7]} {tt[9]}"
+            t2 = f"       {tt[0]} {tt[1]} {tt[2]} {tt[9]} seconds"
         tr2 = s.font2.render(t2, True, (255, 255, 0))
 
         s.screen.blit(tr, (0, 0))
