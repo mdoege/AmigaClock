@@ -2,9 +2,10 @@
 
 An analog [Amiga](https://en.wikipedia.org/wiki/Amiga) clock and several other graphics experiments and small utilites in PyGame:
 
-### Clocks
+### Clocks and timers
 
 * aclock/aclock2/amigaclock: Amiga-inspired analog clocks in different designs
+* hexclock: colorful RGB clock
 * oclock: "on-line clock" with modem dialing sound, meant to track daily time spent online. Use "o" to toggle online status, "r" for daily reset.
 * pomo: activity timer (20 minutes green, 5 minutes red; reset with "r" key)
 * smoothclock: like amigaclock but with smooth second hand movement
