@@ -8,7 +8,7 @@ import random, time
 
 RES = 64
 RES2 = RES/2
-SRES = 640
+SRES = 1024
 tile = 1		# number of tiles (press T to change)
 slow = False		# slow mode (press S to toggle)
 
