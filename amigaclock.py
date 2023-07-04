@@ -66,7 +66,7 @@ class AmigaClock:
 			x2, y2 = .88*s.clocksize()*sin(6*x*pi/180), .88*s.clocksize()*cos(6*x*pi/180)
 			pygame.draw.line(s.screen, BLACK,
 				(int(x1+s.res[0]//2), int(y1+s.res[1]//2)),
-				(int(x2+s.res[0]//2), int(y2+s.res[1]//2)), 2)
+				(int(x2+s.res[0]//2), int(y2+s.res[1]//2)), max(2, s.res[0]//400))
 		for x in range(0, 360, 30):
 			s.diam(x, .95, .88, .81, 3)
 
@@ -85,7 +85,7 @@ class AmigaClock:
 		x2, y2 = 0, 0
 		pygame.draw.line(s.screen, ORANGE,
 			(int(x1+s.res[0]//2), int(-y1+s.res[1]//2)),
-			(int(x2+s.res[0]//2), int(-y2+s.res[1]//2)), 2)
+			(int(x2+s.res[0]//2), int(-y2+s.res[1]//2)), max(2, s.res[0]//400))
 		
 		pygame.display.flip()
 
