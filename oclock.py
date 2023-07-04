@@ -10,7 +10,7 @@ class tc:
         s.res = 174, 106
         s.screen = pygame.display.set_mode(s.res)
         s.out = pygame.Surface(s.res)
-        pygame.display.set_caption("On-Line")
+        pygame.display.set_caption("Off-Line")
         s.clock = pygame.time.Clock()
         s.font = pygame.font.Font("OCRA.otf", 80)
         s.online = False
@@ -25,6 +25,10 @@ class tc:
                 s.running = False
             if (event.type == pygame.KEYDOWN and event.key == pygame.K_o):
                 s.online = not s.online
+                if s.online:
+                    pygame.display.set_caption("On-Line")
+                else:
+                    pygame.display.set_caption("Off-Line")
                 s.last = time.time()
                 # round up time to nearest minute when stopping:
                 if s.online == False:
