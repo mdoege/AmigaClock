@@ -7,8 +7,17 @@ import pygame, random
 
 def getcol():
     return [85 * random.randint(0, 3) for q in (1, 2, 3)]
+#    return [127 * random.randint(0, 2) for q in (1, 2, 3)]
 
-COL = getcol(), getcol()
+def getdiffcol():
+    "Get two different colors"
+    a = getcol()
+    while True:
+        b = getcol()
+        if a != b: break
+    return a, b
+
+COL = getdiffcol()
 FPS = 60
 RULES = 18, 22, 26, 30, 41, 45, 54, 60, 90, 102, 105, 106, 110, 122, 126, 146, 150, 154, 182
 RES = 500, 300
@@ -27,7 +36,7 @@ class Cell:
     def newrule(self):
         global COL
 
-        COL = getcol(), getcol()
+        COL = getdiffcol()
         if random.random() < .5:
             self.cell = [random.randint(0, 1) for q in range(2 + NCELL)]
         else:
