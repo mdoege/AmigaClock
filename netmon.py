@@ -6,7 +6,8 @@ import pygame, time
 
 BLUE = 0, 85, 170
 ORANGE = 255, 136, 0
-MAX_BPS = 64e6	# maximum line capacity in bps
+WHITE = 255, 255, 255
+MAX_BPS = 64 * 1024 * 1024 	# maximum line capacity (64 Mbps)
 fn = "/sys/class/net/enp23s0/statistics/"
 
 class NetMon:
@@ -45,6 +46,12 @@ class NetMon:
 		pygame.draw.line(s.screen, ORANGE,
 			((s.res[0]-1), s.res[1]-1),
 			((s.res[0]-1), s.res[1]-net), 1)
+		# 2 MB/s markers
+		for q in range(0, int(MAX_BPS), 2 * 8 * 1024 * 1024):
+			y = q / MAX_BPS * s.res[1]
+			pygame.draw.line(s.screen, WHITE,
+				((s.res[0]-1), s.res[1]-y),
+				((s.res[0]-1), s.res[1]-y), 1)
 		
 		pygame.display.flip()
 
