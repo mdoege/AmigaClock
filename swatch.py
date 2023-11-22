@@ -8,10 +8,10 @@ import pygame
 
 # (modified for precision)
 
-from datetime import datetime
+from datetime import datetime, timezone
 
 def now():
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc)
 
     # we need to convert the supplied time to CET to calculate
     # the beats.
