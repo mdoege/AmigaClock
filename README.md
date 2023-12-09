@@ -22,10 +22,15 @@ An analog [Amiga](https://en.wikipedia.org/wiki/Amiga) clock and several other g
 * munch: colorful [munching squares](https://www.hakmem.org/#item146)
 * netmon: network activity monitor
 * wall: wallpaper algorithm from *The New Turing Omnibus: Sixty-Six Excursions in Computer Science*
+* worm: a circle moves around randomly (animated by 1-D Perlin noise) and leaves a colorful trace behind (press Return to save a screenshot)
 
-![screenshot1](https://github.com/mdoege/AmigaClock/raw/master/amigaclock.png "AmigaClock screenshot")
-![screenshot2](https://github.com/mdoege/AmigaClock/raw/master/screenshot.png "Cell, Dazzler, cpumon screenshot")
-![screenshot3](https://github.com/mdoege/AmigaClock/raw/master/screenshot2.png "Circles and Munch screenshot")
+![screenshot1](amigaclock.png "AmigaClock screenshot")
+
+![screenshot2](screenshot.png "Cell, Dazzler, cpumon screenshot")
+
+![screenshot3](screenshot2.png "Circles and Munch screenshot")
+
+![screenshot4](worm.png "Worm screenshot")
 
 ### License
 
