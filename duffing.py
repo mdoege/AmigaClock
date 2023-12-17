@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # Duffing oscillator phase space plots
 #   horizontal axis = position x
 #   vertical axis = velocity v
