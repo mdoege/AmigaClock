@@ -18,6 +18,8 @@ An analog [Amiga](https://en.wikipedia.org/wiki/Amiga) clock and several other g
 * cell: [cellular automata](https://en.wikipedia.org/wiki/Elementary_cellular_automaton), press Space for a new pattern
 * cpumon: simple CPU usage monitor (needs [psutil](https://github.com/giampaolo/psutil))
 * dazzler: graphics demo inspired by the 1970s [Cromemco Dazzler kaleidoscope demo](https://www.youtube.com/watch?v=2tDbn1N8EWI)
+* duffing: [Duffing oscillator](https://en.wikipedia.org/wiki/Duffing_equation) phase space plots; new random parameters are picked every 20 s.
+* intergal: intergalactic supercomputer panel, inspired by the [bigclivedotcom video](https://www.youtube.com/watch?v=7f8jgvvJe-Q); basically a big array of LEDs blinking at _almost_ .5 Hz which slowly desynchronize. Needs NumPy.
 * minsky: [Minsky circles](https://www.hakmem.org/#item149)
 * munch: colorful [munching squares](https://www.hakmem.org/#item146)
 * netmon: network activity monitor
