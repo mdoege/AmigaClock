@@ -6,8 +6,8 @@ import pygame
 import numpy
 import random, time
 
-RESX, RESY = 16, 32    # LED resolution
-SIZE = 5               # LED size
+RESX, RESY = 16, 32     # LED resolution
+SIZE = 9                # LED size
 COLOR = 200, 0, 0       # LED RGB color
 UPDATE = 2/16           # update interval
 
@@ -16,9 +16,9 @@ led = numpy.zeros((RESX, RESY))
 class Dazzler:
     def __init__(s):
         pygame.init()
-        # total vertical size: 6 full panels and 10 rows from a 7th panel
+        # total vertical size: 3 full panels and 10 rows from a 4th panel
         #   (https://housedillon.com/blog/resurrected-led-panels/)
-        s.screen = pygame.display.set_mode((RESX * SIZE, (6*32+10) * SIZE))
+        s.screen = pygame.display.set_mode((RESX * SIZE, (3*32+10) * SIZE))
         pygame.display.set_caption('Think')
         s.clock = pygame.time.Clock()
         s.dazz = pygame.Surface((RESX, RESY))
