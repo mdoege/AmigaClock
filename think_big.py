@@ -56,8 +56,8 @@ class Dazzler:
 
         out = pygame.transform.scale(s.dazz, (RESX * SIZE, RESY * SIZE))
 
-        # pattern is the same on all 7 panels
-        for b in range(7):
+        # pattern is the same on all 4 panels
+        for b in range(4):
             s.screen.blit(out, (0, b * RESY * SIZE))
         
         pygame.display.flip()
