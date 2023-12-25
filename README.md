@@ -12,6 +12,7 @@ An analog [Amiga](https://en.wikipedia.org/wiki/Amiga) clock and several other g
 * swatch: Swatch Internet Time (aka "Beats") clock
 * syncclock: same as tclock, except it uses ntpdate to synchronize computer time to a time server every 30 minutes
 * tclock: a simple digital text clock in HH:MM:SS format
+* upclock: uptime clock (Linux)
 
 ### Other programs
 
