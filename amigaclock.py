@@ -7,6 +7,7 @@
 import pygame
 from math import pi, cos, sin
 import datetime, os
+from os.path import join, abspath, dirname
 
 BLUE = 0, 85, 170
 BLACK = 0, 0, 0
@@ -21,7 +22,9 @@ class AmigaClock:
 		s.res = 250, 250  # default window size
 		s.screen = pygame.display.set_mode(s.res, pygame.RESIZABLE)
 		pygame.display.set_caption('AmigaClock')
-		pygame.display.set_icon(pygame.image.load('amigaclock_icon.png'))
+		home = dirname(abspath(__file__))
+		fn = join(home, 'amigaclock_icon.png')
+		pygame.display.set_icon(pygame.image.load(fn))
 		s.screen.fill(BLUE)
 		s.clock = pygame.time.Clock()
 
