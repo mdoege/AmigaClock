@@ -7,12 +7,12 @@ import pygame, os, sys, time
 class tc:
     def __init__(s):
         pygame.init()
-        s.res = 348, 106
+        s.res = 216, 66
         s.screen = pygame.display.set_mode(s.res)
         s.out = pygame.Surface(s.res)
         pygame.display.set_caption("Off-Line")
         s.clock = pygame.time.Clock()
-        s.font = pygame.font.Font("OCRA.otf", 80)
+        s.font = pygame.font.Font("OCRA.otf", 50)
         s.online = False
         s.total = 0
         if len(sys.argv) > 1:
