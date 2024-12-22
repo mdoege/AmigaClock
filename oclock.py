@@ -7,7 +7,7 @@ import pygame, os, sys, time
 class tc:
     def __init__(s):
         pygame.init()
-        s.res = 216, 66
+        s.res = 288, 66
         s.screen = pygame.display.set_mode(s.res)
         s.out = pygame.Surface(s.res)
         pygame.display.set_caption("Off-Line")
@@ -61,7 +61,10 @@ class tc:
         else:
             s.screen.fill((140, 140, 140))
             col = 0, 0, 0
-        t = "%03u:%02u" % (s.total // 60, s.total % 60)
+        mins = s.total // 60
+        hours = mins // 60
+        mins = mins % 60
+        t = "%02u:%02u:%02u" % (hours, mins, s.total % 60)
         tr = s.font.render(t, True, col)
         #print(tr.get_size())
         s.screen.blit(tr, (0, 0))
