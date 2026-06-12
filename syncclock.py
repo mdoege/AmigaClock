@@ -7,7 +7,9 @@ import pygame, os, time
 SYNCTIME = 30 * 60      # syncing interval in seconds
 
 def do_sync():
-    os.system("/home/martin/bin/ntpdate ntp1.t-online.de > /tmp/ntpsync.txt")
+    #os.system("/home/martin/bin/ntpdate ntp1.t-online.de > /tmp/ntpsync.txt")
+    # https://www.ntp-server.de/ntp-server-deutschland/
+    os.system("/home/martin/bin/ntpdate ptbtime1.ptb.de > /tmp/ntpsync.txt")
     os.system("/home/martin/bin/hwclock -w")
 
 class sc:
